@@ -15,7 +15,7 @@
           new_list[name][keys] = []
         end
         
-        new_list[name][keys] << attributes.to_s
+        new_list[name][keys].push(attributes.to_s)
     
       end
     end
