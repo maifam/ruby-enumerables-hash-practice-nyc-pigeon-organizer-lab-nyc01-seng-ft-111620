@@ -4,7 +4,7 @@
   new_list = {}
   
   data.each do |keys, values|
-    values.each do |inner_keys, names|
+    values.each do |attributes, names|
       names.each do |name|
         
         if !new_list[name] 
@@ -15,7 +15,7 @@
           new_list[name][keys] = []
         end
         
-        new_list[name][keys] << inner_keys.to_s
+        new_list[name][keys] << attributes.to_s
     
       end
     end
