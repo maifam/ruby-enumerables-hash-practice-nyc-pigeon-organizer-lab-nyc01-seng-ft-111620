@@ -1,20 +1,27 @@
 
  def nyc_pigeon_organizer(data)
+   
+  new_list = {}
   
-  final = data.each_with_object({}) do |(key,value), new_list|
-    value.each do |attributes, names|
+  data.each do |keys, values|
+    values.each do |inner_keys, names|
       names.each do |name|
-        if !new_list[name]
-          new_list[name] = {} 
+        
+        if !new_list[name] 
+          new_list[name] = {}
         end 
-        if !new_list[name][key]
-           !new_list[name][key] = []
-        end 
-        new_list[name][key].push(attributes.to_s)
-      end 
-    end 
+        
+        if !new_list[name][keys] 
+          new_list[name][keys] = []
+        end
+        
+        new_list[name][keys] << inner_keys.to_s
+    
+      end
+    end
   end
-end
+new_list
+end	
 
 
 
